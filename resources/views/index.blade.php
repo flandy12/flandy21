@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- file css -->
     <link rel="stylesheet" href="{{ asset('/css/AllMain.css')}}">
     <title>Document</title>
 </head>
@@ -17,7 +18,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse m-auto" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
                         </li>
@@ -230,16 +231,16 @@
                 <h2>Produk</h2>
             </div>
             <div class="swiper-wrapper">
+                @foreach($users2 as $data)
                 <div class="swiper-slide">
                     <div class="card" style="width: 15rem;">
-                        <img class="card-img-top" src="{{asset('/img/img1.jpg')}}" alt="Card image cap">
+                    <img class="card-img-top" src="{{asset('/storage/'.$data->file)}}" alt="{{$data->file}}">
                         <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <p class="card-text">{{$data -> nama}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
+                <!-- <div class="swiper-slide">
                     <div class="card" style="width: 15rem;">
                         <img class="card-img-top" src="{{asset('/img/img2.jpg')}}" alt="Card image cap">
                         <div class="card-body">
@@ -265,7 +266,8 @@
                                 of the card's content.</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
+                @endforeach
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -303,6 +305,7 @@
 
         </div>
     </footer>
+    <!-- file script js -->
     <script src="{{asset('/js/main.js')}}"></script>
 </body>
 

@@ -10,8 +10,10 @@ use Illuminate\Support\Facades\DB;
 class ActionController extends Controller{   
     //halaman awal web
     public function Index(){
+        //mengambil data dari database dan menampilkanya di index
         $users2 = DB::table('shop')->get();
         return view('index', ['users2' => $users2]);
+        // return view('index');
     }
     //halaman add data
     public function Add(){
@@ -22,8 +24,8 @@ class ActionController extends Controller{
     //     $users = DB::table('')->get();
     //     return view('admin', ['users' => $users]);
     // 
-    // method untuk insert data ke table admin
 
+    // method untuk insert data ke table admin
     public function AddData(Request $request)
     {
     //validasi untuk file yang harus diisi
@@ -46,6 +48,7 @@ class ActionController extends Controller{
         $email = 'email' => $request->Email,
         'file'=> $fileName
     ]);
+    //mengalihkan kehalaman awal
     return redirect('/');
    }
    public function error(){

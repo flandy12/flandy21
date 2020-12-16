@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', 'ActionController@Index');
+//tampilan API berada di controller Objek.php
+Route::get('/dataU', 'Objek@DataJson');
+//Tampilan ADMIN
 Route::get('/admin', 'ActionController@error');
+//Tampilan ADD DATA berada  selengkapnya di controller ActionController.php
 Route::get('/add', 'ActionController@Add');
+//Tampilan MENGIRIM DATA KE DATABASE selengkapnya berada di controller ActionController.php
 Route::post('/add/proses', 'ActionController@AddData');

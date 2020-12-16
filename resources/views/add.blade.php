@@ -39,8 +39,11 @@
         <div class="add_barang">
             <div class="form-main-1">
                 <div class="container">
+                    <!-- action =/add/proses hasil dapat dilihat di folder router web.php -->
                     <form method="POST" action="/add/proses" enctype="multipart/form-data">
+                        <!-- @csrf befungsi agar form pada laravel berfungis (memberikan angka angka numerik sebagain inisialisasi form tersebut) -->
                         @csrf
+                        <!-- @if ($errors->any()) befungsi mempilkan error  -->
                         @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -50,6 +53,7 @@
                             </ul>
                         </div>
                         @endif
+
                         <div class="form-group">
                             <label>Nama </label>
                             <input type="text" class="form-control" name="Nama">
