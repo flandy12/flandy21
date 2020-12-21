@@ -1,0 +1,9 @@
+.Main-movie {
+   margin: 30px 0;
+}
+.Main-movie h2 {
+    color: black;
+}
+.Main-movie .card:hover{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.192);
+}

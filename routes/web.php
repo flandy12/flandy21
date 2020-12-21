@@ -12,12 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'ActionController@Index');
+Route::get('/','ActionController@index');
 //tampilan API berada di controller Objek.php
-Route::get('/dataU', 'Objek@DataJson');
+Route::get('/film', 'Objek@DataJson');
 //Tampilan ADMIN
 Route::get('/admin', 'ActionController@error');
 //Tampilan ADD DATA berada  selengkapnya di controller ActionController.php
 Route::get('/add', 'ActionController@Add');
 //Tampilan MENGIRIM DATA KE DATABASE selengkapnya berada di controller ActionController.php
 Route::post('/add/proses', 'ActionController@AddData');
+//Tampilan Login
+Route::get('/login', 'Objek@Login');
+

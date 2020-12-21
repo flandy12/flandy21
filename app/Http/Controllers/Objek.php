@@ -10,26 +10,11 @@ use Illuminate\Support\Facades\DB;
 class Objek extends Controller
 {
    public function Data(){
-    $arrays =array(
-        [   'id' => 1,
-            'name' => 'flandy',
-            'usia' => 17
-        ]   
-        ,
-        [
-            'id' => 2,
-            'name' => 'aldy',
-            'usia' => 16]
-        ,
-        [
-            'id' => 3,
-            'name' => 'aldy',
-            'usia' => 16]
-    );
+    return view('gmail');
     // $sort = array_values(Arr::sort($array,function($value){
     //     return $value['usia'];
     // }));    
-    return view('produk', ['arrays' => $arrays]);
+   
    }
    public function DataJson(){
        //sumber API dari the movie database
@@ -37,10 +22,36 @@ class Objek extends Controller
        // menambil API dan diubah menjadi array
        $kontent = file_get_contents($sumber);
        //merubahnya menjadi JSON
-       $data = json_decode($kontent,true);
+       $datafilm = json_decode($kontent,true);
        //array asosiatif agar hasil dari results tidak baca
-       $data = $data["results"];
-       //mengirim API ke VIEW produk ubah menjadi sebiah variableData 
-       return view('produk', ['data' => $data]);
+       $datafilm = $datafilm["results"];
+       //mengirim API ke VIEW produk ubah menjadi sebiah variableData
+       return view('movie')->with(['datafilm' => $datafilm]);
    }
+   
+   public function Login(){
+       $sumberAPI = 'https://api.nytimes.com/svc/movies/v2/critics/all.json?api-key=3q486SyJSEGPyCMOJq1Y3u8oRm6lIw4u';
+
+       $AmbilKonten = file_get_contents($sumberAPI);
+
+       $UbahData = json_decode($AmbilKonten,true);
+
+       $UbahData = $UbahData ['results'];
+      
+    //    var_dump($UbahData);
+
+       return view('',['UbahData' => $UbahData]);
+   }
+   public function Youtube(){
+    //api youtube
+    $sumberApi= 'https://youtube.googleapis.com/youtube/v3/channels?part=snippet&part=statistics&id=UCrY-V2LmFVqKU_SOAReVyGw&key=AIzaSyD_bnfsCh3gWIh61y2YV6MbnNtlawPXOcw';
+    //menambil json
+    $AmbilKonten = file_get_contents($sumberApi);
+    //mengubah json menjadi array asosiatif
+    $UbahData = json_decode($AmbilKonten,true);
+
+    $UbahData = $UbahData ['results'];
+ //    var_dump($UbahData);
+    return view('')->with(['UbahData' => $UbahData]);
+}
 }
