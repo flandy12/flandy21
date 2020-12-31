@@ -12,10 +12,10 @@ import 'swiper/swiper-bundle.css';
 var swiper = new Swiper('.swiper-container', {
     slidesPerColumn: 1,
     slidesPerView: 1,
-    width:280,
-    height:500,
-    spaceBetween:-10,
-    setWrapperSize:true,
+    width: 280,
+    height: 500,
+    spaceBetween: -10,
+    setWrapperSize: true,
     slidesPerColumnFill: 'row',
     slidesOffsetBefore: 0,
     normalizeSlideIndex: true,
@@ -30,4 +30,3 @@ var swiper = new Swiper('.swiper-container', {
         hideOnClick: true,
     },
 });
-

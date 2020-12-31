@@ -20,14 +20,13 @@
                 <div class="collapse navbar-collapse m-auto" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{URL::to('/')}}">Home <span
-                                    class="sr-only">(current)</span></a>
+                            <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('/film')}}">Produck</a>
+                            <a class="nav-link" href="film">Produck</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('/add')}}">Add</a>
+                            <a class="nav-link" href="add">Add</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -88,7 +87,7 @@
     <div class="main-five">
         <div class="five-column">
             <div class="column-item">
-                <img src="{{asset('/img/group.png')}}" alt="" class="img-item">
+                <img src="{{asset('/img/group.png')}}" alt="" class="img-item" id="img-item">
                 <h3 class="text-4">Team
                 </h3>
                 <p> attempt to represent an accurate depiction of a visual reality but instead use colours, shapes,
@@ -96,7 +95,7 @@
                 </p>
             </div>
             <div class="column-item">
-                <img src="{{asset('/img/internet.png')}}" alt="" class="img-item">
+                <img src="{{asset('/img/internet.png')}}" alt="" class="img-item"id="img-item">
                 <h3 class="text-4"> Global team
                 </h3>
                 <p> Exhibition idea does not attempt to represent an accurate depiction of a visual reality
@@ -120,13 +119,15 @@
             </div>
             <div class="swiper-wrapper">
                 @foreach($users2 as $data)
-                <div class="swiper-slide">
+                <div class="swiper-slide" >
+                    <a href="/movie/{{$data->id}}">
                     <div class="card" style="width: 15rem;">
                         <img class="card-img-top" src="{{asset('/storage/'.$data->file)}}" alt="{{$data->file}}">
                         <div class="card-body">
                             <p class="card-text">{{$data -> nama}}</p>
                         </div>
                     </div>
+                    </a>
                 </div>
                 @endforeach
             </div>
@@ -135,11 +136,12 @@
     </div>
 
     <div class="Main-movie">
-        <div class="container">
+        <div class="container swiper-container">
             <h2>Popular</h2>
-            <div class="row row-cols-1 row-cols-md-5 g-4">
+            <!-- <div class="row row-cols-1 row-cols-md-5 g-4 swiper-wrapper"> -->
+            <div class="swiper-wrapper">
                 @foreach($datafilm as $db)
-                <div class="col mt-4">
+                <div class="col mt-4 swiper-slide">
                     <div class="card h-100">
                         <a href="https://image.tmdb.org/t/p/w500{{$db['poster_path']}}">
                             <img class="card-img-top w-100" src="https://image.tmdb.org/t/p/w500{{$db['poster_path']}}"
@@ -153,9 +155,12 @@
                     </div>
                 </div>
                 @endforeach
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
+    </div>
+
     <footer>
         <div class="all-footer">
             <div class="item-footer ">

@@ -12371,6 +12371,21 @@ html {
 .Main-movie .card:hover{
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.192);
 }
+.Show {
+    margin: auto;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(250, 250, 250);
+}
+.Show .card:hover{
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.144);
+ }
+.Show .card img{
+    width: 200px;
+    object-fit: cover;
+ }
 /**
  * Swiper 6.3.5
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -12570,9 +12585,9 @@ html {
     display: none;
   }
   :root {
-    /*
+    
     --swiper-pagination-color: var(--swiper-theme-color);
-    */
+   
   }
   .swiper-pagination {
     position: absolute;
@@ -12774,9 +12789,9 @@ html {
   }
   /* Preloader */
   :root {
-    /*
+    
     --swiper-preloader-color: var(--swiper-theme-color);
-    */
+   
   }
   .swiper-lazy-preloader {
     width: 42px;

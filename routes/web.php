@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ShowMovie;
+use Doctrine\DBAL\Schema\Index;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +23,6 @@ Route::get('/admin', 'ActionController@error');
 Route::get('/add', 'ActionController@Add');
 //Tampilan MENGIRIM DATA KE DATABASE selengkapnya berada di controller ActionController.php
 Route::post('/add/proses', 'ActionController@AddData');
-//Tampilan Login
-Route::get('/login', 'Objek@Login');
+//Menampilkan movie databse local berdasarkan Id
+Route::get('/movie/{id}', 'ShowMovie@Index');
 

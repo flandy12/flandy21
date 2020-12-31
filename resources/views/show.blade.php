@@ -1,12 +1,11 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- file csc -->
+    <!-- file css -->
     <link rel="stylesheet" href="{{ asset('/css/AllMain.css')}}">
+    <title>Document</title>
 </head>
 
 <body>
@@ -21,14 +20,13 @@
                 <div class="collapse navbar-collapse m-auto" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{URL::to('/')}}">Home <span
-                                    class="sr-only">(current)</span></a>
+                            <a class="nav-link active" href="{{URL('/')}}">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('/film')}}">Produck</a>
+                            <a class="nav-link" href="{{URL('film')}}">Produck</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('/add')}}">Add</a>
+                            <a class="nav-link" href="{{URL('add')}}">Add</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -41,30 +39,26 @@
             </div>
         </nav>
     </header>
-    <div class="Main-movie">
-        <div class="container">
-            <h2>Popular</h2>
-            <div class="row row-cols-1 row-cols-md-5 g-4">
-                @foreach($datafilm as $db)
-                <div class="col mt-4">
-                    <div class="card h-100">
-                       <a href="https://image.tmdb.org/t/p/w500{{$db['poster_path']}}">
-                       <img class="card-img-top w-100" src="https://image.tmdb.org/t/p/w500{{$db['poster_path']}}"
-                            alt=""></a>
-                        <div class="card-body">
-                            <h5 class="card-title">{{$db['original_title']}}</h5>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">{{$db['release_date']}}</small>
-                        </div>
+
+    <div class="Show">
+        @foreach($results as $nilai)
+        <div class="card" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{asset('/storage/'.$nilai->file)}}" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$nilai->nama}}</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>
-                @endforeach
             </div>
         </div>
+        @endforeach
     </div>
-    <!-- file script js -->
-    <script src="{{asset('/js/main.js')}}"></script>
-</body>
+</body> 
 
 </html>

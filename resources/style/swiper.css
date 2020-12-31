@@ -197,9 +197,9 @@
     display: none;
   }
   :root {
-    /*
+    
     --swiper-pagination-color: var(--swiper-theme-color);
-    */
+   
   }
   .swiper-pagination {
     position: absolute;
@@ -401,9 +401,9 @@
   }
   /* Preloader */
   :root {
-    /*
+    
     --swiper-preloader-color: var(--swiper-theme-color);
-    */
+   
   }
   .swiper-lazy-preloader {
     width: 42px;
