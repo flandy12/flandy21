@@ -5,9 +5,8 @@
 
 body,
 html {
+    background-color: #f8f8f8;
     color: #EDF2EF;
-    /* background-color: #2ebdff; */
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }/*
 @media (min-width:576px) {
 
@@ -384,7 +383,7 @@ html {
 
 }  */
 
-@media (min-width:992px) {
+/* @media (min-width:992px) {
     .swiper-container {
         max-width: 1300px;
         margin: auto;
@@ -635,7 +634,7 @@ html {
         justify-content: center;
         text-align: center;
     }
-} 
+}  */
 
 @media (min-width:1200px) {
     .swiper-container {
@@ -690,7 +689,8 @@ html {
         display: block;
         padding: 150px 0;
     }
-    .main-text>.judul {
+    .main-text .judul {
+        color: white;
         text-transform: capitalize;
         width: 650px;
         font-size: 32px;
@@ -727,8 +727,9 @@ html {
 
     .sign-main {
         border: none;
-        background-color: #21dce9f5;
-        color: rgb(255, 255, 255);
+        border: 0.8px solid #3bbdfa;
+        background-color: transparent;
+        color: rgb(56, 56, 56);
         padding: 8px 35px;
     }
 
@@ -739,7 +740,7 @@ html {
         padding: 8px 35px;
     }
 
-    .card-group img {
+    .card-text-group img {
         object-fit: contain;
         height: 350px;
     }
@@ -766,16 +767,17 @@ html {
     .button-2 {
         border: none;
         color: white;
-        background-color: rgb(100, 185, 255);
-        padding: 1px 50px;
+        border-radius: 5px;
+        background-color: #f4d160;
+        padding: 10px 50px;
         box-shadow: none;
         margin-top: 10px;
     }
 
     .main-three {
         margin: auto;
-        background-color: rgb(7, 7, 8);
-        color: rgb(255, 255, 255);
+        background-color:#dae9f8;
+        color: rgb(58, 57, 57);
     }
 
     .main-three-all {
@@ -785,14 +787,17 @@ html {
     }
 
     .main-three .judul {
-        font-size: 24px;
+        color: rgb(36, 35, 35);
+        margin: auto;
+        width: 560px;
+        font-size: 18px;
         text-align: center;
     }
 
     .main-three hr {
         margin: 1% auto;
         height: 2px;
-        background-color: rgb(100, 185, 255);
+        background-color: rgb(253, 253, 253);
         width: 100px;
     }
 
@@ -801,46 +806,51 @@ html {
         margin: 30px;
     }
 
-    .card img {
-        object-fit: cover;
-        height: 300px;
-    }
-
     .card-body {
-        color: #08090a;
+        color: black;
     }
-
     .main-four {
-        padding: 2% 0;
-        background-color: rgb(12, 12, 12);
-        color: rgb(199, 198, 198);
-    }
-
-    .main-four .article-item {
-        font-size: 18px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        margin: auto;
-        width: 550px;
-        padding: 70px 30px;
-        color: #EDF2EF;
+        padding: 50px 0;
+        background-color:transparent;
+        color: #fbeeac;
     }
 
     .main-four .article-all {
         max-width: 1200px;
+        text-align: left;
+        color: #ffefbc;
         margin: auto;
         display: grid;
+        box-shadow: 0 0 10px rgba(138, 136, 136, 0.795);
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-color: #3bbdfa;
         grid-template-columns: 50% 50%;
     }
+    .main-four .article-item {
+        margin: auto;
+        width: 400px;
+        justify-content: center;
+    }
+    .main-four .article-item h2{
+       color: #efff61;
+    }
+    .main-four .article-item p{
+        margin-top: 20px;
+     }
 
     .img-four {
-
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
         object-fit: cover;
-        width: 600px;
-        height: 600px;
+        width: 100%;
+        height: 500px;
     }
 
     .main-five {
-        background-color: #2ebdff;
+        background-color: rgba(219, 101, 22, 0.623);
     }
 
     .five-column {
@@ -872,11 +882,52 @@ html {
         margin-top: 20px;
         color: rgb(37, 37, 36);
     }
+    .all-item-skil {
+        padding: 50px;
+        color: black;
+    }
 
+    .all-item-skil .skil {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .all-item-skil .skil a{
+        width: 50px;
+        margin-top: 10px;
+        text-align: center;
+        height: 50px;
+        border-radius: 50px;
+        background-color: rgb(156, 82, 252);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(255, 244, 220);
+    }
+    .all-item-skil .skil p{
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+
+    .main-seven {
+        padding: 50px;
+        background-color: blueviolet;
+    }
+
+    .main-seven .col .card{
+        box-shadow: 0 0 20px rgba(68, 68, 68, 0.445);
+    }
+
+    .main-seven #img{
+        width: 200px;
+        object-fit: cover;
+        height: 175px;
+    }
     footer {
         padding: 50px 0;
-        background-color: rgb(21, 19, 24);
-        color: rgb(255, 255, 255);
+        background-color:rgb(196, 196, 196);
+        color: black;
     }
 
     .all-footer {

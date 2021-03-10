@@ -9,7 +9,7 @@
 
 <body>
 <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="#">FLANDY</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -19,13 +19,13 @@
                 <div class="collapse navbar-collapse m-auto" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{URL::to('/')}}">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('/film')}}">Produck</a>
+                            <a class="nav-link" href="film">Produck</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('/add')}}">Add</a>
+                            <a class="nav-link" href="add">Add</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -67,7 +67,7 @@
                               <input type="file"  id="inputGroupFile01" name="file_">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary" id="login">Submit</button>
+                        <button type="submit" class="btn btn-primary mt-3" id="login">Submit</button>
                     </form>
                 </div>
             </div>
