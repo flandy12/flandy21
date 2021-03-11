@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,8 +14,8 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {   
         //halpenting dalam hosting heroku
-        if ($this->app->environment() !== 'development') {
-            $this->app->register(IdeHelperServiceProvider::class);
+       if(config('APP_ENV') === 'production') {
+            URL::forceScheme('https');
         }
     }
 
