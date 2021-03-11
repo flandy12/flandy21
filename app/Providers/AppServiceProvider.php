@@ -13,10 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {   
-        //halpenting dalam hosting heroku
-       if(config('APP_ENV') === 'production') {
-            URL::forceScheme('https');
-        }
+   
     }
 
     /**
@@ -26,5 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+             //halpenting dalam hosting heroku
+       if(config('APP_ENV') === 'production') {
+        URL::forceScheme('https');
+    }
     }
 }
