@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {   
         //halpenting dalam hosting heroku
-        if ($this->app->environment() !== 'production') {
+        if ($this->app->environment() !== 'development') {
             $this->app->register(IdeHelperServiceProvider::class);
         }
     }
